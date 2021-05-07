@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+  height: 100vh;
+}
+.container {
+  width: 400px;
+  height: 400px;
+  background-color: #000;
+}
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: dodgerblue;
+  transition: 1s ease-in-out;
+  animation: move-box;
+  animation-duration: 5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.box img {
+  height: 100%;
+  width: 100%;
+}
+
+.container:hover .box {
+  animation-play-state: paused;
+}
+
+@keyframes move-box {
+  0% {
+    transform: translateX(0);
+  }
+  16.6% {
+    transform: translateX(300px);
+  }
+  33.2% {
+    transform: translate(300px, 300px);
+  }
+  49.8% {
+    transform: translate(0, 300px);
+  }
+  66.4% {
+    transform: translate(0, 0);
+  }
+  83% {
+    transform: translate(150px, 150px) scale(4);
+    background-color: pink;
+  }
+  100% {
+    transform: translate(150px, 500px);
+  }
+}
